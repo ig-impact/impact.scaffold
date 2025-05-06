@@ -1,6 +1,12 @@
 cli_impact <- cli::style_bold("IMPACT")
+default_core_packages <- c(
+  "impact-initiatives/cleaningtools",
+  "fs"
+)
 
-impact_renv_init <- function(project_path, core_packages = c("fs")) {
+impact_renv_init <- function(
+    project_path,
+    core_packages = default_core_packages) {
   cli::cli_progress_step("Initializing {.pkg renv}")
   renv::init(
     project = project_path,
