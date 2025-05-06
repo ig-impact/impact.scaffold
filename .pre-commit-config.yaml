@@ -32,6 +32,10 @@ repos:
           .*\.Rds|
           .*\.Rproj|
           .*\.sh|
+          .*\.svg|
+          .*\.ico|
+          .*\.png|
+          .*\.webmanifest|
           (.*/|)\.gitignore|
           (.*/|)\.gitlab-ci\.yml|
           (.*/|)\.lintr|
@@ -47,6 +51,7 @@ repos:
           (.*/|)WORDLIST|
           \.github/workflows/.*|
           data/.*|
+          man/figures/.*
           )$
     -   id: lintr
     -   id: readme-rmd-rendered
