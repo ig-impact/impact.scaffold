@@ -117,6 +117,8 @@ impact_scaffold_project <- function(
     cli::cli_progress_step(
       "Initializing {.pkg targets} with {.code targets::use_targets()}"
     )
-    targets::use_targets(open = FALSE, overwrite = FALSE)
+    withr::with_dir(project_path_abs, {
+      targets::use_targets(open = FALSE, overwrite = FALSE)
+    })
   }
 }
