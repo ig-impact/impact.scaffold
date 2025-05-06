@@ -54,7 +54,7 @@ impact_scaffold_project <- function(
 
   impact_renv_init(
     project_path = project_path_abs,
-    core_packages = default_core_packages
+    core_packages = core_packages
   )
 
   if (use_targets) {
