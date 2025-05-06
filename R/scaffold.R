@@ -1,12 +1,14 @@
 cli_impact <- cli::style_bold("IMPACT")
 default_core_packages <- c(
   "impact-initiatives/cleaningtools",
-  "fs"
+  "targets",
+  "tarchetypes",
+  "visNetwork"
 )
 
 impact_renv_init <- function(
     project_path,
-    core_packages = default_core_packages) {
+    core_packages) {
   cli::cli_progress_step("Initializing {.pkg renv}")
   renv::init(
     project = project_path,
@@ -36,6 +38,7 @@ impact_scaffold_project <- function(
     use_rstudio = TRUE,
     use_git = TRUE,
     use_targets = TRUE,
+    core_packages = default_core_packages,
     ...) {
   project_path_abs <- fs::path_abs(project_path) # nolint
   cli::cli_progress_step(
@@ -49,6 +52,15 @@ impact_scaffold_project <- function(
     )
   )
 
-  # TODO: handle core packages
-  impact_renv_init(project_path = project_path_abs)
+  impact_renv_init(
+    project_path = project_path_abs,
+    core_packages = default_core_packages
+  )
+
+  if (use_targets) {
+    cli::cli_progress_step(
+      "Initializing {.pkg targets} with {.code targets::use_targets()}"
+    )
+    targets::use_targets(open = FALSE, overwrite = FALSE)
+  }
 }

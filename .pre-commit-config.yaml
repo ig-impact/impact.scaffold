@@ -15,6 +15,7 @@ repos:
         -    renv
         -    usethis
         -    withr
+        -    targets
     # codemeta must be above use-tidy-description when both are used
     # -   id: codemeta-description-updated
     -   id: use-tidy-description

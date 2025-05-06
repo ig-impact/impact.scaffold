@@ -6,12 +6,13 @@ test_that("Installing packages works correctly", {
     httptest2::with_mock_api({
       impact_renv_init(
         project_path = ".",
-        core_packages = default_core_packages
+        core_packages = c("cli", "impact-initiatives/cleaningtools")
       )
     })
     expect_true(fs::file_exists("./renv.lock"))
     expect_true(fs::file_exists("renv/activate.R"))
+    expect_true(fs::file_exists(".here"))
     installed_packages <- names(renv::lockfile_read(project = ".")$Packages)
-    expect_true(all(c("cleaningtools", "fs") %in% installed_packages))
+    expect_true(all(c("cleaningtools", "cli") %in% installed_packages))
   })
 })

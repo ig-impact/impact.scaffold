@@ -13,6 +13,7 @@ Imports:
     fs,
     lifecycle,
     renv,
+    targets,
     usethis,
     withr
 Suggests: 
