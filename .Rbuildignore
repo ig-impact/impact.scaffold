@@ -1,0 +1,8 @@
+^LICENSE\.md$
+^README\.Rmd$
+^\.pre-commit-config\.yaml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^renv$
+^renv\.lock$
