@@ -24,10 +24,13 @@ Lifecycle
 linearGradient
 LinkingTo
 nealrichardson
+passthrough
+pre
 rect
 renv
 Roxygen
 RoxygenNote
+RStudio
 rx
 svg
 testthat
